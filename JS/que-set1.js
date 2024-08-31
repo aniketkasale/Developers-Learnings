@@ -92,14 +92,63 @@
 // Write a JavaScript function that accepts a string
 // as a parameter and converts the first letter of each
 // word of the string in upper case
+// function capitalize(string) {
+//     const temp = string
+//       .split(" ")
+//       .map((word) => word.charAt(0).toUpperCase() + word.substring(1));
+//     return temp.join(' ');
+//   }
 
-function capitalize(string) {
-    const temp = string
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.subString(1));
-    return temp;
-  }
-  
-  console.log(capitalize("aniket kasale"));
-  console.log("aniket kasale");
-  
+//   console.log(capitalize("aniket kasale"));
+
+// Write a JavaScript function to get
+// the number of occurrences of each letter
+// in specified string
+
+// function occurrences(string) {
+//     const occ = {}
+//     string.split('').forEach(letter => {
+//         if (occ[letter]) {
+//             occ[letter] = occ[letter] + 1
+//         } else {
+//             occ[letter] = 1
+//         }
+//     });
+//     return occ
+// }
+
+// console.log(occurrences('apple'))
+
+// loop an array and add all members of it
+
+// function addArrayMembers(array) {
+//     let sum = 0;
+//     array.forEach(ele=>sum+=ele)
+//     return sum
+// }
+// console.log(addArrayMembers([1,2,3,4]))
+
+// in an array of numbers and strings, only add those members which are not strings
+// function addArrayMembers(array) {
+//     let sum = 0;
+//     array.forEach(ele=>{
+//         if(typeof ele==='number') sum +=ele
+//     })
+//     return sum
+// }
+// console.log(addArrayMembers([1,2,'a','b',3,4]))
+
+// loop an array of objects and remove all objects which don't have gender's value male
+// function removeObj(arr) {
+//     let modifiedArr = arr.filter((obj)=>obj?.gender==='male');
+//     return modifiedArr
+// }
+
+// console.log(removeObj([{gender:'male'},{gender:'female'}]))
+
+// Write a JavaScript function to clone an array
+function cloneArray(arr) {
+    return [...arr]
+}
+
+// Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
