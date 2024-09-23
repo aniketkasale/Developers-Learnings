@@ -148,7 +148,58 @@
 
 // Write a JavaScript function to clone an array
 function cloneArray(arr) {
-    return [...arr]
+  return [...arr];
 }
 
 // Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+// function getFirstElements(arr, n = 1) {
+//   if (n <= arr.length) {
+//     const temp = [];
+//     for (let i = 0; i < n; i++) {
+//       const element = arr[i];
+//       temp.push(element);
+//     }
+//     return temp;
+//   } else {
+//     return "error";
+//   }
+// }
+
+// console.log(getFirstElements([1, 2, 3, 4, 5], 2));
+
+// Write a JavaScript function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
+// function getLastElements(arr, n = 1) {
+//   if (n <= arr.length) {
+//     const temp = [];
+//     for (let i = 0; i < n; i++) {
+//       const element = arr[arr.length - 1 - i];
+//       temp.push(element);
+//     }
+//     return temp;
+//   } else {
+//     return "error";
+//   }
+// }
+
+// console.log(getLastElements([1, 2, 3, 4, 5], 2));
+
+// Write a JavaScript program to find the most frequent item of an array
+// function freqItem(arr) {
+//   const freq = {};
+
+//   arr.forEach((item) => {
+//     if (freq[item]) {
+//       freq[item] = freq[item] + 1;
+//     } else freq[item] = 1;
+//   });
+// }
+
+// is vowel
+
+function isVowel(char) {
+  const lowerChar = char.toLowerCase();
+  const vowels = "aeiou";
+  return vowels.indexOf(lowerChar) !== -1;
+}
+
+console.log(isVowel("B"));
