@@ -1,0 +1,132 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+nav h4 {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+nav h4 i {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+#center {
+  width: 100%;
+  padding: 40px 40px 5px;
+}
+#center h1 {
+  font-size: 3.5vw;
+  font-weight: 400;
+  line-height: 4vw;
+}
+
+#center-in {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 1.2vw;
+  line-height: 1.55vw;
+}
+
+#right {
+  width: 15%;
+}
+
+.elem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 2px solid rgb(74, 72, 72);
+}
+
+.elem a {
+  text-decoration: none;
+  color: rgb(74, 72, 72);
+}
+
+.elem i {
+  font-size: 20px;
+  opacity: 0;
+}
+
+.elem:hover a {
+  text-decoration: underline;
+  color: black;
+}
+
+.elem:hover i {
+  opacity: 1;
+}
+
+#bottom {
+  height: 42.1vh;
+  width: 100%;
+  background-image: url(https://img.freepik.com/free-photo/photo-woman-posing-black-leather-jacket-cap_114579-59407.jpg?t=st=1727147757~exp=1727151357~hmac=f374482cf81b7fb96abd30fd3a6f209d80740899dcee070e88e798b4d39becdb&w=1380);
+  background-size: cover;
+  background-position: 0 30%;
+}
+
+@media (max-width: 600px) {
+  #center {
+    width: 100%;
+    padding: 40px 40px 5px;
+  }
+  #center h1 {
+    font-size: 9vw;
+    line-height: 10vw;
+  }
+
+  #center-in {
+    flex-direction: column;
+    font-size: 3.4vw;
+    gap: 1vw;
+    line-height: 4.4vw;
+  }
+
+  #right {
+    margin-top: 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .elem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 2px solid rgb(74, 72, 72);
+  }
+
+  .elem i {
+    opacity: 1;
+  }
+
+  #bottom {
+    margin-top: 2.5vw;
+  }
+}
