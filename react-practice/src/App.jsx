@@ -1,10 +1,14 @@
-import './App.css'
+// import './App.css'
+import ProgressBarQue from './components/Progressbar'
+import TempratureConverter from './components/TempratureConverter'
 
 function App() {
 
   return (
     <>
-      Demo
+   {/* <ProgressBarQue/> */}
+
+   <TempratureConverter/>
     </>
   )
 }
