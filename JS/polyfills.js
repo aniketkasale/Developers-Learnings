@@ -38,3 +38,4 @@ Array.prototype.myFilter = function (cb) {
   const sum = [1, 2, 4].myReduce((acc, currentVal) => acc + currentVal);
   console.log(sum);
   
+  // 
