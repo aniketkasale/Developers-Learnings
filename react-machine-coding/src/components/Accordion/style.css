@@ -1,0 +1,12 @@
+.accordion{
+    border: 2px solid;
+    padding: 10px;
+
+.main-block{
+    display: flex;
+    justify-content: space-between;
+    .control{
+        cursor: pointer;
+    }
+}
+  }
