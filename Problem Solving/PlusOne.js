@@ -18,22 +18,34 @@ function plusOne(digits) {
   // otherwise if multiple digits are there then we will replace 9 by 0 and whatever digit that comes first from reverse we will update that by 1;
   // if no digit found then we will unshift 1 to array
 
-  let n = digits.length;
-  let lastDigit = digits[n - 1];
-  if (lastDigit !== 9) {
-    digits[n - 1] = lastDigit + 1;
-    return digits;
+  //   let n = digits.length;
+  //   let lastDigit = digits[n - 1];
+  //   if (lastDigit !== 9) {
+  //     digits[n - 1] = lastDigit + 1;
+  //     return digits;
+  //   }
+  //   for (let i = n - 1; i >= 0; i--) {
+  //     const element = digits[i];
+  //     if (element !== 9) {
+  //       digits[i] = digits[i] + 1;
+  //       break;
+  //     } else digits[i] = 0;
+  //   }
+  //   if (digits[0] === 0) {
+  //     digits.unshift(1);
+  //   }
+  //   return digits;
+
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] !== 9) {
+      digits[i]++;
+      return digits;
+    }
+
+    digits[i] = 0;
   }
-  for (let i = n - 1; i >= 0; i--) {
-    const element = digits[i];
-    if (element !== 9) {
-      digits[i] = digits[i] + 1;
-      break;
-    } else digits[i] = 0;
-  }
-  if (digits[0] === 0) {
-    digits.unshift(1);
-  }
+
+  digits.unshift(1);
   return digits;
 }
 
