@@ -1,32 +1,32 @@
 // Build an app where clicking the "Add" button adds progress bars to the page. The progress bars fill up in series, aka the second bar only starts filling up after the first bar is completely filled.
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function ProgressBarQue() {
   const [progressBarCount, setProgressBarCount] = useState([]);
-  const [prevBarCompleted, setprevBarCompleted] = useState(true);
+  const [prevBarCompleted, setPrevBarCompleted] = useState(true);
 
   const addProgressBar = () => {
-    if (prevBarCompleted) {
-      setProgressBarCount([...progressBarCount, progressBarCount.length + 1]);
-      setprevBarCompleted(false);
-    }
+    if (!prevBarCompleted) return;
+
+    setProgressBarCount((prev) => [...prev, prev.length + 1]);
+
+    setPrevBarCompleted(false);
   };
 
   const onComplete = () => {
-    setprevBarCompleted(true);
+    setPrevBarCompleted(true);
   };
 
   return (
     <>
-      <button onClick={() => addProgressBar()} disabled={!prevBarCompleted}>
+      <button onClick={addProgressBar} disabled={!prevBarCompleted}>
         Add
       </button>
-      <br />
-      <br />
-      {progressBarCount.map(() => {
-        return <ProgressBar onComplete={onComplete} />;
-      })}
+
+      {progressBarCount.map((id) => (
+        <ProgressBar key={id} onComplete={onComplete} />
+      ))}
     </>
   );
 }
@@ -37,29 +37,29 @@ function ProgressBar({ onComplete }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let interval;
-    if (interval) clearInterval(interval);
-    if (progress < 100) {
-      interval = setInterval(() => {
-        setProgress((prev) => prev + 1);
-      }, 10);
-    } else {
-      onComplete();
-    }
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          onComplete();
+          return 100;
+        }
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [progress]);
+        return prev + 1;
+      });
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
       style={{
         width: `${progress}%`,
-        height: '5px',
-        background: 'red',
-        marginTop: '10px',
+        height: "5px",
+        background: "red",
+        marginTop: "10px",
       }}
-    ></div>
+    />
   );
 }
